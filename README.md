@@ -26,3 +26,10 @@ Cada tabla cumple una función específica en el análisis y administración de 
 
 Este proyecto proporciona una solución funcional para la gestión de estados de tránsito semaforizados y facilita el trabajo del equipo de transporte. Aunque se han identificado algunas oportunidades de mejora, el sistema actual cumple con los requisitos de análisis y administración de los datos provenientes del software ITC. Este proceso de generación de tablas ofrece al equipo de transporte una herramienta efectiva para tomar decisiones basadas en datos en el ámbito de la gestión semafórica.
 
+## Equipo del Proyecto
+
+Este proyecto ha contado con la colaboración del equipo de transporte, conformado por:
+- **Santiago Noboa**
+- **Mauro Bruzzone**
+- **Gastón Bonfiglio**
+
