@@ -231,7 +231,7 @@ for i in range(len(df2)):
 
 # TIEMPOS 3
 for i in range(len(df2)):
-    ws[f"D{i + 2}"] = df2.iloc[i, 4]  
+    ws[f"E{i + 2}"] = df2.iloc[i, 4]  
 
 wb.save(excel_file_path)
 
@@ -425,8 +425,8 @@ for i in range(len(df2)):
 
 # Iterar sobre todas las filas y columnas de tabla_simetrica
 # Obtener el valor y el estilo de la celda J14
-valor_j14 = ws["J14"].value
-estilo_j14 = ws["J14"]._style  # El estilo de la celda J14
+valor_w1 = ws["W1"].value
+estilo_w1 = ws["W1"]._style  # El estilo de la celda J14
 
 # Recorrer las columnas y filas de df5
 for col_idx in range(len(df5.columns)):
@@ -437,10 +437,10 @@ for col_idx in range(len(df5.columns)):
             destino = f"{col_letter}{row_idx + 3}"
 
             # Asignar el valor de J14 a la celda de destino
-            ws[destino].value = valor_j14
+            ws[destino].value = valor_w1
 
             # Copiar el formato desde J14
-            ws[destino]._style = estilo_j14  # Aplicar el estilo de J14 a la celda de destino
+            ws[destino]._style = estilo_w1  # Aplicar el estilo de J14 a la celda de destino
 
 
 wb.save(excel_file_path)
@@ -1050,8 +1050,8 @@ sheet_name = "Tabla 1-6"
 wb = load_workbook(excel_file_path)
 ws = wb[sheet_name]
 
-valor_k19 = ws["k19"].value
-estilo_k19 = ws["k19"]._style 
+valor_w1 = ws["w1"].value
+estilo_w1 = ws["w1"]._style 
 
 # Variables para la configuración de las tablas
 col_start = 3  # Columna "C" (para tablas verticales)
@@ -1085,8 +1085,8 @@ for secuencia in range(1, secuencias + 1):
         for row_idx in range(len(dfX)):
             if dfX.iloc[row_idx, col_idx] == "ok":
                 destino = f"{col_letter}{row_start + row_idx}"
-                ws[destino].value = valor_k19
-                ws[destino]._style = estilo_k19 
+                ws[destino].value = valor_w1
+                ws[destino]._style = estilo_w1 
 
 
 wb.save(excel_file_path)

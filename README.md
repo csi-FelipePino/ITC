@@ -2,7 +2,7 @@
 
 # Proyecto de Gestión de Estados de Tránsito Semaforizados
 
-Este proyecto surge como una solución para el equipo de transporte encargado de gestionar los estados de tránsito semaforizados. El objetivo es extraer, transformar y organizar los datos necesarios para el análisis de patrones y estados de funcionamiento de los semáforos, facilitando la administración y seguimiento de los mismos en distintos escenarios de tránsito.
+Este proyecto surge como una solución para el equipo de transporte encargado de gestionar los estados de tránsito semaforizados. El objetivo es extraer, transformar y organizar los datos , facilitando la administración y seguimiento de los mismos en distintos escenarios de tránsito.
 
 ## Descripción General
 
@@ -20,7 +20,7 @@ Cada tabla cumple una función específica en el análisis y administración de 
 ## Futuras Mejora y Optimización
 
 - **Optimización de la Tabla 6**: Se considera que en versiones futuras se podría implementar una lógica de programación más eficiente para mejorar su velocidad y consumo de recursos.
-- **Adaptación de la Tabla 9**: La tabla 9 se presenta actualmente en un formato parcial en Excel, debido a las limitaciones técnicas de este software. En futuras versiones, se explorarán alternativas para su estructura completa y su compatibilidad con Excel.
+- **Adaptación de la Tabla 9**: La tabla 9 se presenta actualmente en Excel pero en una automatizacón parcial, debido a las limitaciones técnicas de la libreria usada. En futuras versiones, se explorarán alternativas para su estructura completa y su compatibilidad con el entregable final.
 
 ## Conclusión
 
