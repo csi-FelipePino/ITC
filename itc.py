@@ -1060,7 +1060,7 @@ incremento_fila = 14  # Espacio entre tablas verticales
 
 # Nuevo incremento para la fila horizontal
 base_horizontal_row_start = 2  # Fila inicial para la primera fila horizontal (2)
-incremento_horizontal = 15  # Incremento para la fila horizontal
+incremento_horizontal = 14  # Incremento para la fila horizontal
 
 # Asumiendo que `secuencias` contiene el número de tablas a llenar
 for secuencia in range(1, secuencias + 1):
@@ -1284,7 +1284,31 @@ work_023_index = df[df.iloc[:, 0].str.contains('Work.023', na=False)].index
 if not work_022_index.empty and not work_023_index.empty:
     tabla9 = df.iloc[work_022_index[0] +1 : work_023_index[0]-1] #quito el work
 else:
-    print("No se encontraron ambas entradas de 'Work.997' y 'Work.998'")
+    print("No se encontraron ambas entradas de 'Work.022' y 'Work.998'")
+
+##### Se sumo esta solucion para poder trabajar con la version 1 y 2 de ITC 
+check_keywords = tabla9.iloc[0:,0].tolist()
+
+keywords = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'week', 'weekend']
+
+# Función para verificar si hay coincidencias en una lista
+def check_and_drop_first_column(lst, df):
+    # Convertimos todos los elementos a minúsculas para una comparación insensible a mayúsculas/minúsculas
+    lst = [str(item).lower() for item in lst]
+    
+    # Comprobar si alguno de los keywords está en la lista
+    if any(keyword in item for item in lst for keyword in keywords):
+        # Si hay coincidencias, eliminar la primera columna del DataFrame
+        df.drop(df.columns[0], axis=1, inplace=True)
+        return True
+    return False
+
+# Llamar a la función
+if check_and_drop_first_column(check_keywords, tabla9):
+    print("Se eliminó la primera columna de la tabla 9.")
+else:
+    print("No se encontró ninguna coincidencia.")
+#####
 
 lunes = tabla9.iloc[0].tolist()
 lunes = [x for x in lunes if pd.notna(x)]
@@ -1378,7 +1402,7 @@ wb.save(excel_file_path)
 
 
 ############################################################################################
-########### Tabla 9
+########### Tabla 10
 
 work_012_index = df[df.iloc[:, 0].str.contains('Work.012', na=False)].index
 work_013_index = df[df.iloc[:, 0].str.contains('Work.013', na=False)].index
