@@ -1350,9 +1350,7 @@ def corregir_formato(lista):
 
 # Aplicar la función a cada lista
 for lista, nombre in zip([lunes, M_J, viernes, sabado, domingo], ["lunes", "M_J", "viernes", "sabado", "domingo"]):
-    print(f"Procesando {nombre}...")
     corregir_formato(lista)
-    print(f"{nombre}: {lista}\n")
 
 print(M_J)
 
