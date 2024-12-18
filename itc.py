@@ -363,6 +363,8 @@ else:
     print("No se encontraron ambas entradas de 'Work.997' y 'Work.998'")
 
 segunda_columna_lista = tabla5.iloc[:, 1].tolist()
+segunda_columna_lista = [val for val in segunda_columna_lista if pd.notna(val)] # aca con el caso de horneros daba ['2', '2', '4', '4', '8', '16', '12', '20', '2', '2', '8', '16', nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan, nan], basicamente agarra elemenos despues del primer next 
+print(segunda_columna_lista)
 
 
 fase_vals = [1, 2, 3, 4]
@@ -1333,6 +1335,26 @@ indice = pd.date_range("00:00", "23:30", freq="15min").strftime("%H:%M")
 
 # Crear el DataFrame vacío
 df9 = pd.DataFrame(index=indice, columns=columnas)
+
+lunes = lunes[1:]
+M_J = M_J[1:]
+viernes = viernes[1:]
+sabado = sabado[1:]
+domingo = domingo[1:]
+
+# Función para corregir el formato de una lista
+def corregir_formato(lista):
+    for i in range(len(lista)):
+        if lista[i].count('-') > 2:  # Si tiene más de dos guiones
+            lista[i] = '-'.join(lista[i].split('-')[:-1])  # Eliminar el último guion y lo que le sigue
+
+# Aplicar la función a cada lista
+for lista, nombre in zip([lunes, M_J, viernes, sabado, domingo], ["lunes", "M_J", "viernes", "sabado", "domingo"]):
+    print(f"Procesando {nombre}...")
+    corregir_formato(lista)
+    print(f"{nombre}: {lista}\n")
+
+print(M_J)
 
 for item in lunes:
     plan, hora_inicio, minutos = item.split('-')
